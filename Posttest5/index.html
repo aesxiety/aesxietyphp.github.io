@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles-index.css">
+    <!-- icon -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sales Toyota Balikpapan</title>
+</head>
+<body>
+    
+    <!-- Heeader navbar -->
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <a href="index.html"><img src="./assets/logo-toyota.png" alt="logo-toyota"></a>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="formkredit.php">Pengajuan Kredit</a></li>
+                    <li><a href="#price-list">Price List</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- js navbar -->
+    <script>
+        const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+
+        let getMode = localStorage.getItem("mode");
+            if(getMode && getMode === "dark-mode"){
+                body.classList.add("dark");
+            }
+
+        // js untuk toggle dark and light mode
+        modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js unutuk user tetap memilih mode terakhir walau page refresh atau file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+        });
+
+        // js unutk toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+        });
+        
+        //js unutuk toggle sidebar
+        sidebarOpen.addEventListener("click" , () =>{
+            nav.classList.add("active");
+        });
+
+        body.addEventListener("click" , e =>{
+            let clickedElm = e.target;
+
+            if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+                nav.classList.remove("active");
+            }
+        });
+    </script>
+
+    <!-- banner start -->
+    <section class="content" id="content-banner">
+        <img src="./assets/banner1.jpg" alt="banner">
+    </section>
+    <!-- banner end -->
+    
+    <!-- slider text start -->
+    <section class="content" id="slider-text">
+        <marquee behavior="" direction="left">
+        Dapatkan <b>Keuntungan</b> & <b>Kemudahan</b> Mebbeli Mobil Toyota Terbaru disini |
+        DP Rendah - Cicilan Ringan - Cash atau Kredit - Banyak Bonus - Simulasi Kredit
+        Beragam - Syarat Pengajuan Mudah - Proses Cepat.
+        </marquee>
+    </section>
+    <!-- slider text end -->
+
+    <!-- pricelist start -->
+    <section class="content" id="price-list">
+        <div class="article">
+            <h1>price-list Terbaru</h1>
+            <p><br>
+                <br>
+                Tak pernah ada waktu yang lebih tepat untuk memiliki mobil Toyota impian Anda. 
+                Dengan daftar harga spesial kami, Anda dapat meraih kenyamanan, keandalan, 
+                dan prestise yang sudah dikenal dengan merek Toyota, semuanya dengan harga 
+                yang sangat terjangkau.
+                <br>
+                <br>
+                Kami menawarkan beragam pilihan model, dari mobil
+                keluarga yang luas hingga mobil sporty yang menggoda, semua dirancang dengan
+                inovasi dan teknologi terkini. Tidak hanya itu, mobil-mobil Toyota juga
+                dikenal akan efisiensi bahan bakar yang luar biasa, menjadikannya investasi 
+                cerdas dalam mobilitas Anda. Jadi, jangan lewatkan kesempatan ini untuk
+                mengemudi dengan gaya dan keyakinan bersama Toyota.
+            
+            </p>
+        </div>
+        <div class="price-list-image" id="price-list">
+            <img src="./assets/pricelist.jpg" alt="pricelist-imgae">
+        </div>
+    </section>
+    <!-- pricelist ends -->    
+
+    <!-- about start -->
+    <section class="content" id="about">
+        <div class="heading">
+            <h1>About Us</h1>
+        </div>
+        <div class="container">
+            <div class="content-about">
+                <h2>DWI REZA ARIYADI </h2>
+                <p>Perkenalkan nama saya Dwi Reza Ariyadi Nim 2209106090 website
+                    ini dibuat untuk prototype website kakak saya yang bekerja di delaer mobil toyota balikpapan
+                    untuk info penjualan mobil dapat hubungi saya. atau dapat kunjungi delaer toyota balikpapan 
+                    untuk test drive langsung mobil impian kamu
+                </p>
+                <button class="cta-button">Info lebih  lanjut</button>
+            </div>
+            <div class="image-about">
+                    <img src="./assets/profile-about.jpg" alt="profile-about" ></div>
+            </div>
+        </div>
+    </section>
+<!-- akhir section aboutme-->
+    
+    <!-- footer start -->
+    <footer>
+        <p>Hak Cipta &copy; 2023 Dwi Reza Ariyadi</p>
+        <p><a href="#">Kebijakan Privasi</a> | <a href="#">Syarat dan Ketentuan</a></p>
+    </footer>
+    <!-- footer end -->
+
+    <!-- pop up start -->
+    <div id="popup-ad" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img src="./assets/content-iklan.jpg" alt="Iklan" />
+        <p>Promo Spesial bulan Oktober khusus unutkmu DP 10% menggunakan Leasing kerjasama kami</p>
+        <button class="cta-button" onclick="ajukanKredit()">Ajukan Kredit</button>
+    </div>
+    <!-- pop up end -->
+
+    <!-- ----js untuk pop up iklan start------ -->
+    <script>
+        function showPopup() {
+            var popup = document.getElementById("popup-ad");
+            popup.style.display = "block";
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup-ad");
+            popup.style.display = "none";
+        }
+
+        function ajukanKredit() {
+        window.location.href = 'formkredit.php';
+        }
+
+        // Tampilkan pop-up setelah beberapa detik
+        setTimeout(showPopup, 5000);
+        // -----js untuk pop up iklan ends-----------
+    </script>
+</body>
+</html>
