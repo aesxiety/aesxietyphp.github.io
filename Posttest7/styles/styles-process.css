@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: url(../assets/cover-from.jpg);
+    }
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/cover-from.jpg);
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1; 
+}
+     
+.popup {
+    background-color: #fff;
+    padding: 20px; 
+    width: 400px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    margin: 0 auto; 
+}
+
+.validasi-berhasil{
+    font-size: 20px;
+    margin-bottom: 20px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.result {
+    font-size: 16px; 
+    margin-bottom: 20px;
+}
+
+
+td.aksi{
+    text-align: center;
+}
+
+button.right{
+    margin:0 1rem 0 3rem;
+}
+
+button.left{
+    margin: 0 2rem 0 0 ;
+}
+
+button {
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+
+.btn-table{
+
+    text-decoration: none;
+    color: #f3f3f3;
+}
+button[name='cta-hapus'] {
+    text-decoration: none;
+    background-color: rgb(229, 67, 67); 
+    color: #fff; 
+}
+
+button[name='cta-edit']{
+    background-color: rgb(80, 202, 80); 
+    color: #fff; 
+}
+button[name='cta-save']{
+    background-color: #007bff; 
+    color: #fff; 
+}
+button[name='cta-hapus']:hover {
+    text-decoration: none;
+    background-color: rgb(175, 12, 12); 
+    color: #fff; 
+}
+
+button[name='cta-edit']:hover{
+    background-color: rgb(2, 132, 2); 
+    color: #fff; 
+}
+button[name='cta-save']:hover{
+    background-color: #043162; 
+    color: #fff; 
+}
